@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  {{#if article}}
+    {{#each article}}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>{{this.title}}</h3>
+      </div>
+      <div class="panel-body">
+        <p>{{this.summary}}<p>
+        <a href="http://www.reuters.com" + {{this.link}} target="_blank">Read More</a>
+        <br>
+        <button type="button" class="btn btn-danger addFav" data-id={{this._id}}>Add to Favorites</button>
+      </div>
+    </div>
+    {{/each}}
+  {{else}}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h4>Currently there are no articles.</h4>
+      </div>
+    </div>
+  {{/if}}
+</div>
